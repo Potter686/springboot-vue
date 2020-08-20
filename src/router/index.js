@@ -1,58 +1,47 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import PageOne from "../views/PageOne";
+import UserManager from "../views/UserManager";
 import App from "../App";
-import PageTwo from "../views/PageTwo";
-import PageThe from "../views/PageThe";
+import AddUser from "../views/AddUser";
+import UserUpdate from "../views/UserUpdate";
 import PageFour from "../views/PageFour";
 import Index from "../views/Index";
+
 Vue.use(VueRouter);
 
   const routes = [
     {
       path: "/",
-      name: "导航1123",
+      show:true,
+      name: "图书管理",
       component: Index,
-      redirect:"/pageOne",
+      redirect:"/UserManager",
       children:[
         {
-          path: "/pageOne",
-          name: "页面1",
-          component: PageOne
+          path: "/UserManager",
+          name: "查询",
+          component: UserManager
         },
         {
-          path: "/pageTwo",
-          name: "页面2",
-          component: PageTwo
+          path: "/AddUser",
+          name: "添加",
+          component: AddUser
         }
       ]
     },
     {
-      path: "/navigation",
-      name: "导航2123",
-      component: Index,
-      children: [
-        {
-          path: "/pageThe",
-          name: "页面3",
-          component: PageThe
-        },
-        {
-          path: "/PageFour",
-          name: "页面4",
-          component: PageFour
-        }
-      ]
+      path: "/UserUpdate",
+      show: false,
+      component: UserUpdate
     }
 
-
-]
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
+});
 
 export default router
