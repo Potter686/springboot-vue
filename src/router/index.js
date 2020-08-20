@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import UserManager from "../views/UserManager";
 import App from "../App";
 import AddUser from "../views/AddUser";
-import UserUpdate from "../views/UserUpdate";
+// import UserUpdate from "../views/UserUpdate";
 import PageFour from "../views/PageFour";
 import Index from "../views/Index";
 
@@ -27,14 +27,19 @@ Vue.use(VueRouter);
           path: "/AddUser",
           name: "添加",
           component: AddUser
+        },
+        {
+          path: "/PageFour",
+          name: "test",
+          component: PageFour
         }
       ]
     },
-    {
-      path: "/UserUpdate",
-      show: false,
-      component: UserUpdate
-    }
+    // {
+    //   path: "/UserUpdate",
+    //   show: false,
+    //   component: UserUpdate
+    // }
 
 ];
 
